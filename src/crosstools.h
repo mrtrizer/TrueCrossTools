@@ -39,4 +39,9 @@ uint16_t __REV16(uint16_t value); //replacement for function from ST libs
 
 #endif
 
+
+///Incriments pointer by 1. Return true if start over else false.
+/// incWithOver(int &pointer, int bufLength)
+bool incWithOver(int &pointer, int bufLength);
+
 #endif //CROSSTOOLS_H

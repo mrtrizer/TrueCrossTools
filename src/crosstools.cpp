@@ -1,4 +1,5 @@
 #include "crosstools.h"
+#include <assert.h>
 
 #ifndef STM32F40_41xxx
 uint16_t __REV16(uint16_t value) //replacement for function from ST libs
@@ -10,3 +11,14 @@ uint16_t __REV16(uint16_t value) //replacement for function from ST libs
 #ifndef __GXX_RTTI
 #warning "Dynamic cast is disabled. dynamic_casts are replaced with static_casts"
 #endif
+
+
+bool incWithOver(int &pointer, int bufLength)
+{
+    assert(pointer < bufLength);
+    pointer++;
+    bool startOver = pointer >= bufLength;
+    if(startOver)
+        pointer = 0;
+    return startOver;
+}
