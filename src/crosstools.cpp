@@ -8,10 +8,11 @@ uint16_t __REV16(uint16_t value) //replacement for function from ST libs
 }
 #endif
 
-#ifndef __GXX_RTTI
-#warning "Dynamic cast is disabled. dynamic_casts are replaced with static_casts"
+#ifdef __GNUC__
+#warning Dynamic cast is disabled. dynamic_casts are replaced with static_casts
+#else
+#pragma message("Dynamic cast is disabled. dynamic_casts are replaced with static_casts.")
 #endif
-
 
 bool incWithOver(int &pointer, int bufLength)
 {
