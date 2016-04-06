@@ -12,7 +12,7 @@ uint16_t __REV16(uint16_t value) //replacement for function from ST libs
 #ifdef __GNUG__
 #warning "Dynamic cast is disabled. dynamic_casts are replaced with static_casts"
 #else
-#pragma message ( "your warning text here" )
+#pragma message ( "Dynamic cast is disabled. dynamic_casts are replaced with static_casts" )
 #endif
 #endif
 
