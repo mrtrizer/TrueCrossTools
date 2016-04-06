@@ -9,8 +9,10 @@ uint16_t __REV16(uint16_t value) //replacement for function from ST libs
 #endif
 
 #ifndef __GXX_RTTI
-#ifdef warning
+#ifdef __GNUG__
 #warning "Dynamic cast is disabled. dynamic_casts are replaced with static_casts"
+#else
+#pragma message ( "your warning text here" )
 #endif
 #endif
 
